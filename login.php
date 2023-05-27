@@ -1,12 +1,13 @@
 <?php
 session_start();
 
-if(isset($_POST['Connexion'])){
+if (isset($_POST['Connexion'])) {
     // Vérification de la validité des informations
-    if(isset($_POST['email']) && isset($_POST['password'])){
+    if (isset($_POST['email']) && isset($_POST['password'])) {
         $email = $_POST['email'];
         $mdp = $_POST['password'];
         $erreur = "";
+        
         // Connexion à la base de données
         $nom_serveur = "localhost";
         $utilisateur = "root";
@@ -14,18 +15,34 @@ if(isset($_POST['Connexion'])){
         $nom_bd = "inscription";
         $con = mysqli_connect($nom_serveur, $utilisateur, $mot_de_passe, $nom_bd);
 
-        // requête SQL
-        $req = mysqli_query($con , "SELECT * FROM utilisateurs WHERE email = '$email' AND mdp = '$mdp'");
-        $num_ligne = mysqli_num_rows($req);
-        if($num_ligne > 0){
-            header('Location: index.php');
+        // Requête préparée
+        $req = mysqli_prepare($con, "SELECT nom, prénom, email FROM utilisateurs WHERE email = ? AND mdp = ?");
+        mysqli_stmt_bind_param($req, "ss", $email, $mdp);
+        mysqli_stmt_execute($req);
+
+        // Récupérer le résultat
+        $result = mysqli_stmt_get_result($req);
+        $num_ligne = mysqli_num_rows($result);
+
+        if ($num_ligne > 0) {
+            // Récupérer le nom et le prénom de l'utilisateur
+            $row = mysqli_fetch_assoc($result);
+            $nom = $row['nom'];
+            $prenom = $row['prénom'];
+
+            // Stocker les données dans la session
+            $_SESSION['nom'] = $nom;
+            $_SESSION['prenom'] = $prenom;
             $_SESSION['email'] = $email;
-        }
-        else{
+
+            header('Location: connexion.php');
+        } else {
             $erreur = "Adresse email ou mot de passe incorrect";
         }
     }
 }
+
+
 ?>
 
 <?php
@@ -57,8 +74,11 @@ if (isset($_POST['Enregistrer'])) {
 
         // Exécution de la requête préparée
         if (mysqli_stmt_execute($req)) {
+            $_SESSION['nom'] = $_POST['nom'];
+            $_SESSION['email'] = $_POST['email'];
+            $_SESSION['prenom'] = $_POST['prenom'];
             // Redirection vers une page de succès ou affichage d'un message de réussite
-            header('Location: index.php');
+            header('Location: connexion.php');
             exit();
         } else {
             $erreur2 = "Erreur lors de l'exécution de la requête : " . mysqli_stmt_error($req);
@@ -73,6 +93,7 @@ if (isset($_POST['Enregistrer'])) {
         $erreur2 = "Veuillez remplir tous les champs";
     }
 }
+
 ?>
 
 

@@ -69,7 +69,7 @@ if(isset($_POST['envoyer'])){
         <li><a href="#banniere" onclick="toggleMenu();">Accueil</a></li>
         <li><a href="#apropos" onclick="toggleMenu();">A propos</a></li>
         <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
-        <li><a href="login.php" onclick="toggleMenu();">Utilisateur</a></li>
+        <li><a href="login.php" onclick="toggleMenu();">Connexion</a></li>
         <a href="annonce.html" class="btn-annonce" onclick="toggleMenu();">Annonce</a>
     </ul>
 </header>
@@ -125,6 +125,9 @@ if(isset($_POST['envoyer'])){
     
     </form>
 </section>
+<div class="copyright">
+    <p>copyright 2023 <a href="#">Thomas, Nicolas, Yannick</a></p>
+</div>
 <script type="text/javascript">
     window.addEventListener('scroll', function(){
         const header = document.querySelector('header');

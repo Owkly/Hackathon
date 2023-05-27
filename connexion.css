@@ -1,0 +1,363 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*Style global*/
+p{
+    font-weight: 300;
+    color: #111;
+}
+
+/*C'est ce qui permet de modifier l'espacement etc de la navigateur barre*/
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px 10px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.logo{
+    color: #fff;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+}
+.logo span{
+    color: #fb911f;
+}
+
+.navbar{
+    display: flex;
+    position: relative;
+}
+/*Permet de lister*/
+.navbar li{
+    list-style: none;
+}
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+.btn-annonce{
+    padding: 10px 20px;
+    background: #fb911f;
+   /*Permet de baisser un peu la barre*/
+   margin-top: -10px;
+
+   /*Met des majuscules*/
+   text-transform: uppercase;
+}
+
+.btn-annonce:hover{
+    background: #d87710;
+    transition: ease-out;
+}
+
+/*Permet de mettre des lignes en dessous des trucs*/
+header .navbar li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+/*Permet de mettre un background et de centrer le tout*/
+.banniere{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/Terre.jpeg);
+    background-size: cover;
+}
+
+/*Permet de centrer les contenus et la bannière*/
+.banniere .contenu{
+    max-width: 70%;
+    text-align: center;
+}
+
+.banniere .contenu h2{
+    color: #fff;
+    font-size: 3em;
+    text-transform: capitalize;
+}
+
+/*child 2 car nous voulons changer le texte, c'est le deuxième élément*/
+.contenu p:nth-child(2){
+    color: #fff;    
+    font-size: 1.2em;
+}
+
+/*Permet de styliser le premier boutton*/
+.btn1{
+    font-size: 1em;
+    color: #fff;
+    background: #fb911f;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+
+.btn2{
+    font-size: 1em;
+    color: #fff;
+    background: #2a4963;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.5s;
+    margin-left: 10px;
+}
+
+.btn1:hover{
+    letter-spacing: 4px;
+}
+
+section{
+    padding: 100px;
+}
+
+.row{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/*Permet de modifier la position*/
+.row .col50{
+    position: relative;
+    width: 48%;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Permet de styliser*/
+.row .col50 h2{
+    margin-bottom: 20px;
+}
+
+/*Modifier le titre Apropos*/
+.titre-texte{
+    color: #000;
+    font-size: 2em;
+    font-weight: 300px;
+    text-transform: capitalize;
+}
+
+.titre-texte span{
+    color: #fb911f;
+    font-size: 1.5em;
+    font-weight: 700px;
+    justify-content: center;
+}
+
+
+/*Permet de modifier la taille de l'image d'une */
+.row .col50 img{
+    height: 450px;
+    width: 600px;
+    position: relative;
+}
+
+.contact{
+    background-image: url(./images/formulaiire.png);
+    background-size: cover;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.8);
+    width: 100%;
+    background-position: unset;
+    text-align: center;
+}
+
+.contactform{
+    padding: 75px 50px;
+    background: #fff;
+    box-shadow: 5px 15px 50px rgba(0,0,0,0.8);
+    max-width: 500px;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 38%;
+    text-align: center;
+}
+
+.contactform .inputboite{
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contactform h3{
+    color: #111;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.contactform .inputboite input,
+.contactform .inputboite textarea{
+    width: 100%;
+    border: 1px solid #555;
+    padding: 10px;
+    color: #111;
+    outline: none;
+    font-size: 16px;
+    font-weight: 300;
+    resize: none;
+}
+
+.contactform .inputboite button[type="button"]{
+    font-size: 1em;
+    font-weight: 700;
+    color: #ffff;
+    background: #fb911f;
+    display: inline-block;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 2px;
+    outline: none;
+    border: none;
+    transition: 0.5s;
+    max-width: 120px;
+    align-items: center;
+    justify-content: center;
+}   
+
+.copyright{
+    padding: 20px 40px;
+    border-top: 2px solid rgba(0,0,0,0.1);
+    background: rgba(228,222,222,);
+    text-align: center;
+}
+
+.copyright p:nth-child(1){
+    color: #333;
+}
+
+.copyright a{
+    color: #fb911f;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.contact .titre-texte span{
+    color: #fb911f;
+    font-size: 2em;
+}
+
+header.sticky{
+    background: #fff;
+    padding: 10px 10px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.05);  
+}
+
+header.sticky .logo{
+    color: #000;
+}
+
+header.sticky .navbar li a{
+    color: #000;
+}
+
+header.sticky li a:hover{
+    color:#fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+@media (max-width: 991px) {
+header, header.sticky{
+    padding: 10px 20px;
+}
+
+header .navbar li{
+    margin-left: 0px;
+}
+
+header .navbar li a{
+    text-decoration: none;
+    color: #1111;
+    font-size: 1.6em;
+    font-weight: 300;
+}
+
+.navbar{
+    display: none;
+}
+
+section{
+    padding: 20px;
+}
+
+
+.banniere .contenu h2{
+    font-size: 2em;
+}
+
+
+
+.row .col50 img{
+    margin-left: 18%;
+}
+
+.contenu p:nth-child(2){
+    font-size: 1.2em;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+}
+
+.contactform{
+    margin-left: 25%;
+}
+
+    .row .col50{
+        position: relative;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .banniere .contenu h2{
+        font-size: 2.2em;
+        color: #fff;
+    }
+
+    .titre-texte{
+        color: #000;
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: capitalize; 
+    }
+}

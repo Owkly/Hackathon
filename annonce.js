@@ -35,7 +35,7 @@ window.onload = function() {
             var imageUrl = reader.result;
             storedImageUrls.push(imageUrl);
             localStorage.setItem('imageUrls', JSON.stringify(storedImageUrls));
-            addContentToDisplay(imageUrl, text, text2); 
+            addContentToDisplay(imageUrl, text, text2, text3); 
         }
 
         if (file) {
@@ -67,7 +67,7 @@ window.onload = function() {
         pElement2.className = 'content-text';
 
         var pElement3 = document.createElement('p'); 
-        pElement3.innerText = 'Echange/Prix : ' +text2;
+        pElement3.innerText = 'Echange/Prix : ' +text3;
         pElement3.className = 'content-text';
     
         contentDisplay.appendChild(imgElement);
