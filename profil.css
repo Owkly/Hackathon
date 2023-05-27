@@ -1,0 +1,151 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*Style global*/
+p{
+    font-weight: 300;
+    color: #111;
+}
+
+/*C'est ce qui permet de modifier l'espacement etc de la navigateur barre*/
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px 10px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.logo{
+    color: #fff;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+}
+.logo span{
+    color: #fb911f;
+}
+
+.navbar{
+    display: flex;
+    position: relative;
+}
+/*Permet de lister*/
+.navbar li{
+    list-style: none;
+}
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+/*Permet de mettre des lignes en dessous des trucs*/
+header .navbar li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+.btn-annonce{
+    padding: 10px 20px;
+    background: #fb911f;
+   /*Permet de baisser un peu la barre*/
+   margin-top: -10px;
+
+   /*Met des majuscules*/
+   text-transform: uppercase;
+}
+
+.btn-annonce:hover{
+    background: #d87710;
+    transition: ease-out;
+}
+
+body {
+    background-image: url('images/Terre.jpeg'); 
+    background-repeat: no-repeat;
+    background-size: cover; /* Cette ligne fait en sorte que l'image couvre toute la surface disponible */
+}
+
+
+.Profil .contenu {
+    position: relative;
+    z-index: 9999;
+    padding: 75px 50px;
+    background: #fff;
+    box-shadow: 5px 15px 50px rgba(0,0,0,0.8);
+    max-width: 500px;
+    margin: 200px auto 0; /* Ajoutez une marge en haut. Ajustez la valeur 100px selon vos besoins */
+    text-align: center; 
+}
+
+
+.Profil .contenu .text p {
+    font-weight: 300;
+    color: #111;
+    padding: 10px; /* Modifiez cette valeur selon vos besoins */
+    margin: 0; /* Vous pouvez également ajuster la marge si nécessaire */
+}
+
+/*Permet de lister*/
+.Profil .deco{
+    list-style: none;
+    transition: ease-out;
+    padding: 10px 20px;
+    color: #fff;
+    background: #fb911f;
+    /*Permet de baisser un peu la barre*/
+    margin-top: -10px;
+
+    /*Met des majuscules*/
+    text-transform: uppercase;
+    margin-top: 20px;
+}
+
+.copyright{
+    padding: 20px 40px;
+    border-top: 2px solid rgba(0,0,0,0.1);
+    background: rgba(228,222,222,);
+    text-align: center;
+}
+
+.copyright p:nth-child(1){
+    color: #333;
+}
+
+.copyright a{
+    color: #fb911f;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+}
+
+header.sticky{
+    background: #fff;
+    padding: 10px 10px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.05);  
+}
+
+header.sticky .logo{
+    color: #000;
+}
+
+header.sticky .navbar li a{
+    color: #000;
+}
+
+header.sticky li a:hover{
+    color:#fb911f;
+    border-bottom: 2px solid #fb911f;
+}
