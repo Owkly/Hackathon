@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Mon site web</title>
+    <link rel="stylesheet" type="text/css" href="annonce.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo"><span>Poly'</span>Troc</a>
+        <div class=menutoggle onclick="toggleMenu();"></div>
+        <ul class="navbar">
+            <li><a href="index.php" onclick="toggleMenu();">Accueil</a></li>
+            <li><a href="login.php" onclick="toggleMenu();">Utilisateur</a></li>
+        </ul>
+    </header>
+    <div class="banniere" id="banniere">
+        <div class="contenu">
+            <h2>Des trocs à gogo</h2>
+            <p>Comment ça fonctionne ? C'est simple ! Vous pouvez publier des annonces pour les objets que vous souhaitez troquer, que ce soit des vêtements, des meubles, des appareils électroniques, des livres ou tout autre article. Vous pouvez également proposer des services tels que du jardinage, du bricolage, du soutien scolaire, ou même des conseils écologiques.
+
+                Explorez les annonces des autres utilisateurs et trouvez ce qui correspond à vos besoins. Contactez-les directement pour négocier les modalités de l'échange. Pas d'argent impliqué, juste un échange équitable qui profite à tous et à notre planète.</p>
+        </div>
+    </div>
+    <div class="container">
+        <input type="file" id="image-input" accept="image/*" class="style-button">
+        <textarea id="text-input" placeholder="Contact"></textarea>
+        <textarea id="text-input2" placeholder="Produit"></textarea> <!-- Nouvelle section de texte -->
+        <textarea id="text-input3" placeholder="Echange/Prix"></textarea>
+        <button id="submit-button" class="style-button">Ajouter</button>
+        <button id="delete-button" class="style-button">Supprimer tout</button>
+        <div id="content-display"></div>
+    </div>
+    <script src="annonce.js"></script>
+    <script type="text/javascript">
+        window.addEventListener('scroll', function(){
+            const header = document.querySelector('header');
+            header.classList.toggle("sticky", window.scrollY > 0);
+        });
+    
+        function toggleMenu(){
+            const toggleMenu = document.querySelector('.menutoggle');
+            const navbar = document.querySelector('.navbar');
+            menutoggle.classList.toggle('active');
+            navbar.classList.toggle('active');
+        }
+    </script>
+    <div class="copyright">
+        <p>copyright 2023 <a href="#">Thomas, Nicolas, Yannick</a></p>
+    </div>
+</body>
+</html>

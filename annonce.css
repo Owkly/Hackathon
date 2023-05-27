@@ -1,0 +1,178 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/*Style global*/
+p{
+    font-weight: 300;
+    color: #fff;
+}
+
+/*C'est ce qui permet de modifier l'espacement etc de la navigateur barre*/
+header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    padding: 20px 10px;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.logo{
+    color: #fff;
+    font-weight: bold;
+    font-size: 2em;
+    text-decoration: none;
+}
+.logo span{
+    color: #fb911f;
+}
+
+.navbar{
+    display: flex;
+    position: relative;
+}
+/*Permet de lister*/
+.navbar li{
+    list-style: none;
+}
+.navbar a{
+    color: #fff;
+    text-decoration: none;
+    margin-left: 30px;
+    font-weight: 700;
+}
+
+/*Permet de mettre des lignes en dessous des trucs*/
+header .navbar li a:hover{
+    color: #fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+/*Permet de mettre un background et de centrer le tout*/
+.banniere{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/Terre.jpeg);
+    background-size: cover;
+}
+
+/*Permet de centrer les contenus et la bannière*/
+.banniere .contenu{
+    max-width: 70%;
+    text-align: center;
+}
+
+.banniere .contenu h2{
+    color: #fff;
+    font-size: 3em;
+    text-transform: capitalize;
+}
+
+.style-button {
+    font-family: 'Poppins', sans-serif; /* Utiliser la même police que le reste du site */
+    background-color: white; /* Fond blanc */
+    color: black; /* Couleur du texte noir */
+    font-size: 18px; /* Taille du texte plus grande */
+    padding: 10px 20px; /* Espace interne autour du texte */
+    border: none; /* Enlever la bordure par défaut */
+    cursor: pointer; /* Change le curseur en main quand on survole le bouton */
+}
+
+.style-button:hover {
+    background-color: #ddd; /* Change la couleur de fond quand on survole le bouton */
+}
+
+input[type=file].style-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.container {
+    width: 100%;
+    margin: 70px auto;
+    overflow: hidden;
+    text-align: center;
+}
+#content-display {
+    display: grid;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    text-align: center;
+    width: 300px;
+}
+
+.content-image {
+    display: inline-flex;
+    max-width: 300px;
+    height: auto;
+    border-bottom: 1px solid black; /* Ajout de la bordure inférieure */
+    padding-bottom: 10px; /* Espacement en dessous de la bordure */
+}
+
+.content-text {
+    display: grid;
+    font-size: 16px;
+    color: #111; /* Couleur du texte noir */
+}
+
+
+
+header.sticky{
+    background: #fff;
+    padding: 10px 10px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.05);  
+}
+
+header.sticky .logo{
+    color: #000;
+}
+
+header.sticky .navbar li a{
+    color: #000;
+}
+
+header.sticky li a:hover{
+    color:#fb911f;
+    border-bottom: 2px solid #fb911f;
+}
+
+.copyright{
+    padding: 20px 40px;
+    border-top: 2px solid rgba(0,0,0,0.1);
+    background: rgba(228,222,222,);
+    text-align: center;
+}
+
+.copyright p:nth-child(1){
+    color: #333;
+}
+
+.copyright a{
+    color: #fb911f;
+    text-decoration: none;
+    font-weight: 600;
+    font-style: italic;
+}
